@@ -4,6 +4,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -19,13 +20,79 @@ h5,
 h6 {
     color: white;
 }
+/*=========Buble Section*/
+.bubble {
+    position: relative;
+    width: 100%;
+    height: 120vh;
+    overflow: hidden;
+    background-color: black;
+    justify-content: content;
+    align-items: content;
 
+}
+
+
+
+.bubble span {
+    position: absolute;
+    bottom: -50px;
+    background: transparent;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    pointer-events: none;
+    box-shadow: inset 0 0 10px rgba(225, 225, 225, 0.5);
+    animation: animate 4s linear infinite;
+    -webkit-animation: animate 4s linear infinite;
+}
+.bubble span::before{
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.25) translate(-70%, -70%);
+    -webkit-transform: scale(0.25) translate(-70%, -70%);
+    -moz-transform: scale(0.25) translate(-70%, -70%);
+    -ms-transform: scale(0.25) translate(-70%, -70%);
+    -o-transform: scale(0.25) translate(-70%, -70%);
+    background:radial-gradient(#fff,transparent);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0%);
+        -webkit-transform: translateY(0%);
+        -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+        -o-transform: translateY(0%);
+        opacity: 1;
+    }
+
+    99% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-1200%);
+        -webkit-transform: translateY(-1200%);
+        -moz-transform: translateY(-1200%);
+        -ms-transform: translateY(-1200%);
+        -o-transform: translateY(-1200%);
+        opacity: 0;
+    }
+}
 .header_area {
     width: 100%;
     height: 500px;
-    background-image: url(sli.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+    border-bottom: 1px solid #6b666685
 }
 
 .main_header_area {
@@ -100,7 +167,7 @@ h6 {
     letter-spacing: 2px;
 }
 
-.contant h1 span {
+.spants {
     color: #5baf30;
 }
 
@@ -150,13 +217,13 @@ h6 {
 /*=============================
        Services Area CSS 
 ==============================*/
-section#services {
+#services {
     width: 100%;
     height: 300px;
 }
 
 .services_area h2 {
-    color: #403737;
+    color: #fff;
     font-family: sans-serif;
     font-size: 16px;
     text-align: center;
